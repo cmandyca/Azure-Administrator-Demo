@@ -11,7 +11,22 @@ A high-level diagram of the infrastructure deployed by this Terraform code.
 
 *A simple diagram showing the components below should be embedded here.*
 
-![Architecture Diagram](images/architecture.png)
+ ```mermaid
+        graph TD
+            subgraph "Azure Region: West US 2"
+                subgraph "Resource Group: MyDemoProject-RG"
+                    A[<font size=5>🌐</font><br>Internet] --> B(Public IP);
+    
+            subgraph "VNet: MyDemo-VNet"
+                   subgraph "Subnet: Web-Subnet"
+                         C(VM: Web-VM) --> D(Network<br>Interface);
+                     end
+                 end
+
+                 D --> B;
+                 E(NSG: Web-Subnet-NSG<br>Allow RDP) -.-> Subnet;
+             end
+         end
 
 *Diagram components: VNet -> Subnet -> NSG -> VM with a Public IP*
 
