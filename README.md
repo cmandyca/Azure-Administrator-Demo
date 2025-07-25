@@ -1,4 +1,4 @@
-````markdown
+
 # Azure Small Business Infrastructure Demo
 
 This project deploys a foundational, secure, and scalable infrastructure for a hypothetical small business on Microsoft Azure. The entire environment is defined and managed as code using Terraform, demonstrating best practices for automation and resource management in the cloud.
@@ -120,4 +120,3 @@ Run the following command to delete everything created by this project:
 ```bash
 terraform destroy
 ```
-````
