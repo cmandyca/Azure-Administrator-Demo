@@ -27,7 +27,7 @@ A high-level diagram of the infrastructure deployed by this Terraform code.
                  E(NSG: Web-Subnet-NSG<br>Allow RDP) -.-> Subnet;
              end
          end
-
+```
 *Diagram components: VNet -> Subnet -> NSG -> VM with a Public IP*
 
 ## Skills & Features Demonstrated
