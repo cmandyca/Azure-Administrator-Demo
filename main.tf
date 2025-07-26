@@ -58,13 +58,13 @@ resource "azurerm_subnet_network_security_group_association" "nsg_assoc" {
   network_security_group_id = azurerm_network_security_group.nsg.id
 }
 
-# 6. Create a Public IP for the Web Server (CHANGED TO STANDARD SKU)
+# 6. Create a Public IP for the Web Server
 resource "azurerm_public_ip" "web_pip" {
   name                = "Web-PublicIP"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Static"
-  sku                 = "Standard" # <-- THE FIX IS HERE
+  sku                 = "Standard"
 }
 
 # 7. Create a Network Interface for the Web Server
@@ -88,7 +88,7 @@ resource "azurerm_windows_virtual_machine" "web_vm" {
   location            = azurerm_resource_group.rg.location
   size                = "Standard_B1s" # Free tier eligible
   admin_username      = "azureadmin"
-  admin_password      = "Password1234!" # IMPORTANT: Change this to a secure password
+  admin_password      = "_masked_password_for_demo_" # IMPORTANT: Change this to a secure password
   network_interface_ids = [
     azurerm_network_interface.web_nic.id,
   ]
