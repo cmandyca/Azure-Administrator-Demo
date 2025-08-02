@@ -1,4 +1,4 @@
-# Advanced Azure Secure Infrastructure Deployment
+# Azure Administrator Demo - Deployment
 
 ## Project Overview
 
